@@ -25,7 +25,7 @@ app.get('/weather', (req, res) => {
         
     }
     if(req.query.ciudad){
-        console.log('No hay consulta')
+        console.log('Hay consulta')
         modulo.obtenerClima(req.query.ciudad,(objeto)=>{
             return res.send(objeto);
         })
