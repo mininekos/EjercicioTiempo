@@ -16,15 +16,20 @@ app.get('',(req,res)=>{
 
 
 app.get('/weather', (req, res) => {
+    console.log('entra en la pagina')
     if (!req.query.ciudad) {
+        console.log('Error con la consulta')
         return res.send({
             error: 'Debe de poner una ciudad'
         })
+        
     }
     if(req.query.ciudad){
+        console.log('No hay consulta')
         modulo.obtenerClima(req.query.ciudad,(objeto)=>{
             return res.send(objeto);
         })
+        
     }
 })
 
